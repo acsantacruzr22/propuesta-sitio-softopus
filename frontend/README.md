@@ -1,32 +1,73 @@
-# React + TypeScript + Vite
+# Sitio web de Softopus
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Frontend del sitio institucional de Softopus, construido con React, TypeScript y Vite. Incluye las páginas de inicio, nosotros y política de privacidad, además de componentes compartidos como el encabezado, el pie de página y el formulario de contacto.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 22.12 o posterior (se recomienda una versión LTS).
+- npm, incluido con Node.js.
 
-## React Compiler
+Puedes comprobar las versiones instaladas con:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+node --version
+npm --version
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Instalación
+
+Abre una terminal en la carpeta `frontend` e instala las dependencias definidas en `package-lock.json`:
+
+```sh
+npm ci
+```
+
+Si estás en la raíz del repositorio, primero entra a esa carpeta:
+
+```sh
+cd frontend
+```
+
+## Desarrollo
+
+Inicia el servidor local:
+
+```sh
+npm run dev
+```
+
+Vite mostrará en la terminal la dirección local, normalmente `http://localhost:5173/`. Usa `Ctrl+C` para detener el servidor.
+
+## Comandos disponibles
+
+Ejecuta estos comandos desde `frontend`:
+
+| Comando | Descripción |
+| --- | --- |
+| `npm run dev` | Inicia el servidor de desarrollo con recarga en caliente. |
+| `npm run build` | Comprueba los tipos de TypeScript y genera la versión de producción en `dist/`. |
+| `npm run preview` | Sirve localmente la última compilación de `dist/`; ejecuta primero `npm run build`. |
+| `npm run lint` | Analiza el código con Oxlint. |
+
+## Páginas
+
+| Ruta | Página |
+| --- | --- |
+| `/` | Inicio |
+| `/nosotros` | Nosotros |
+| `/politica-de-privacidad` | Política de privacidad |
+
+## Estructura del proyecto
+
+- `src/` — aplicación React, páginas, estilos y recursos.
+- `src/components/` — componentes reutilizables.
+- `public/` — archivos estáticos servidos sin transformación.
+- `dist/` — archivos generados por `npm run build` (no editar manualmente).
+
+## Tecnologías principales
+
+- React 19 y React Router para las páginas y la navegación.
+- TypeScript para el tipado estático.
+- Vite para el servidor de desarrollo y la compilación.
+- Tailwind CSS para los estilos.
+- Oxlint para el análisis estático del código.

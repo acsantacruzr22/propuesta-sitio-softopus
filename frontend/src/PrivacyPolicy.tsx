@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 const PrivacyPolicy = () => {
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll('main > section[id]');
+      const sections = document.querySelectorAll<HTMLElement>('main > section[id]');
       const navLinks = document.querySelectorAll('#legal-toc a');
       let currentSection = '';
       const scrollPos = window.scrollY + 150;
